@@ -1,2 +1,3 @@
-# LP3THW
- My exercise solutions for LP3THW book
+# Learn-Python-the-HardWay
+ My exercises for LP3THW
+ Completed

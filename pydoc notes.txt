@@ -1,0 +1,139 @@
+*****************************************open********************************
+Raises OS error upon failure.
+
+r - reading 
+w - writing 
+x - creating a new file and writing
+a - appending an open file 
+t - text mode 
+b - binary mode
++ - open a disk file for updating (reading and writing)
+U - universal new line (deprecated)
+
+Python distinguishes files opened in binary and text form even when the underlying operating system does'nt.
+
+Buffering is an optional integer to set buffering policy , pass 0 to switch buffering off (only done in binary mode)
+1  to select line buffering
+
+Newline controls how universal newline works , it only applies to the text mode.
+It can be None,'',\n,\r and \r\n
+
+open() returns a file object whose type depends on the mode , and through which the standard file operations such as reading and writing
+are performed. When open is used to open a file in text mode ('w','r', 'wt', 'rt', etc.) , it returns TextIOWrapper. 
+When used to open a file in binary mode, the returned class varies: in read binary mode , it returns a BufferedReader;
+and in write binary and append binary mode it returns BufferedWriter, and in read/write mode it returns a BufferedRandom.
+
+It is also possible to use string or bytearray as a file for both reading and writing.
+For strings StringIO can be used like a file opened in text mode ;
+For bytes BytesIO can used as a file opened in binary mode.
+
+************************************************os******************************************
+
+These are some 'os' uses I copied from the web.
+
+
+**SYNTAX
+os.rename("current_file_name","new_file_name")
+#!/usr/bin/python3
+import os
+
+# Rename a file from test1.txt to test2.txt
+os.rename( "test1.txt", "test2.txt" )
+
+
+
+
+**SYNTAX
+os.remove(file_name)
+Example
+
+Following is an example to delete an existing file test2.txt −
+
+#!/usr/bin/python3
+import os
+
+# Delete file test2.txt
+os.remove("text2.txt")
+
+
+
+**Syntax
+os.mkdir("newdir")
+Example
+
+Following is an example to create a directory test in the current directory −
+
+#!/usr/bin/python3
+import os
+
+# Create a directory "test"
+os.mkdir("test")
+
+
+
+**Syntax
+
+os.chdir("newdir")
+Example
+
+Following is an example to go into "/home/newdir" directory −
+
+#!/usr/bin/python3
+import os
+
+# Changing a directory to "/home/newdir"
+os.chdir("/home/newdir")
+
+
+
+
+
+**Syntax
+
+os.getcwd()
+Example
+
+Following is an example to give current directory −
+
+#!/usr/bin/python3
+import os
+
+# This would give location of the current directory
+os.getcwd()
+
+
+**SYNTAX
+
+os.rmdir('dirname')
+Example
+
+Following is an example to remove the "/tmp/test" directory. It is required to give fully qualified name of the directory, otherwise it would search for that directory in the current directory.
+
+#!/usr/bin/python3
+import os
+
+# This would  remove "/tmp/test"  directory.
+os.rmdir( "/tmp/test"  )
+
+
+***Notes from pydoc
+OS routines from NT or posix depends on what system you are on.
+This exports -
+-all functions from posix or nt e.g. unlink , stat etc.
+-os.path is either posix path or ntpath.
+-os.name is either posix or nt.
+-os.curdir is the string representing the current directory.('.' always)
+-os.pardir is the string representing the parent directory.(always '..')
+-os.sep is (or the most common) path name seperator.(/ or \\ )
+-os.extsep is the extension seperator.(always '.')
+-os.altstep is the alternative pathname seperator.(None or /)
+-os.pathsep is the component seperator and is used in $PATH etc.
+-os.linesep is the line seperator in the text files.(\r or \n or \r\n)
+-os.defpath is the default search path for the executables.
+-os.devnull is the file path for null devices.('/dev/null', etc.)
+Programs that import and uses 'os' stand a better chance of being portable between the different platforms.
+Of course, they must then use functions that are defined by all platforms.
+(e.g., unlinkand opendir), and leave all pathname manipulation to os.path (e.g., split and join).
+-
+
+

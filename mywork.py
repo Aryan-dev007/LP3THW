@@ -1,0 +1,7 @@
+print("I need to calculate my marks out of 50 internals and out of 50 externals")
+print("English -   43 + 46  =",43+46)
+print("Hindi   -   45 + 50  =",45+50)
+print("Maths   -   50 + 45  =",50+45)
+print("History -   45 + 39  =",45+39)
+print("Total marks          =",43+46+45+50+50+45+45+39)
+print("Percentage obtained  =",363/400*100)
